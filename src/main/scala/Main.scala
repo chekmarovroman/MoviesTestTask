@@ -96,7 +96,7 @@ object Main {
     movies.map { movie =>
       MovieInfo(movie._1.id, movie._1.releaseYear, movie._1.title, movie._2._1, movie._2._2)
     }
-  }.toList
+  }.toList.sortBy(_.avgRating).reverse  //sorting
 
   // avg presented as Double with 2 digits after comma
   def generateReport(movieInfoList: List[MovieInfo], filePath: String): Unit = {
